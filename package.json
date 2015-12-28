@@ -1,6 +1,6 @@
 {
   "name": "grunt-jade-ng-template-cache",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Grunt task to compile jade templates to angular template cache",
   "repository": {
     "type": "git",
