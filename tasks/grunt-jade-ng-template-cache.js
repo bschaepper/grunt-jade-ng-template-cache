@@ -1,7 +1,6 @@
 "use strict";
 
 var Q = require("q");
-var fs = require("fs");
 var jade = require("jade");
 
 module.exports = function (grunt) {
@@ -40,7 +39,7 @@ module.exports = function (grunt) {
                 "}());"
             ].join("\n");
 
-            return Q.nfcall(fs.writeFile, destFile, loaderSource);
+            grunt.file.write(destFile, loaderSource);
         }).then(done).catch(done);
     });
 };
