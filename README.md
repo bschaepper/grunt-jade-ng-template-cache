@@ -24,19 +24,19 @@ grunt.loadNpmTasks('grunt-jade-ng-template-cache');
 ````javascript
 grunt.initConfig({
 
-	ngtemplatecache: {
-		options: { module: "my-app", dest: "public/app/templates.js" },
-		app: {
-			files: [{
-				expand: true,
-				cwd: "public/app/",
-				src: ["**/*.jade"],
-				dest: "/templates/",
-				ext: ""
-			}]
-		}
-	}
-	
+    jadengtemplatecache: {
+        options: { module: "my-app", dest: "public/app/templates.js" },
+        app: {
+            files: [{
+                expand: true,
+                cwd: "public/app/",
+                src: ["**/*.jade"],
+                dest: "/templates/",
+                ext: ""
+            }]
+        }
+    }
+
 });
 ````
 
