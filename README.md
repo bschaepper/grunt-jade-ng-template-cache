@@ -1,5 +1,5 @@
 # grunt-jade-ng-template-cache
-Grunt task to compile jade templates to angular template cache
+Grunt task to compile jade templates to angular template cache, replacing on-the-fly jade rendering seamlessly.
 
 ## Getting Started
 This plugin requires Grunt `>=0.4.0`
@@ -75,5 +75,6 @@ angular.module("my-app").run(["$templateCache", function ($templateCache) {
 ````
 
 In this example there is a `public/app/home/template.jade` file, which will be put to $templateCache
-with the url `/templates/home/template.html`. In Development mode you probably want to configure the
-`/templates/**` url to just render and return jade templates on the fly.
+with the url `/templates/home/template.html`. 
+
+In Development mode you probably want to configure the `/templates/**` url to just render and return jade templates on the fly.
