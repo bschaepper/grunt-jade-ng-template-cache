@@ -9,7 +9,7 @@ module.exports = function (grunt) {
         var done = this.async();
         var files = this.files;
         var templates = [];
-        var options = this.options({ module: "templates", dest: "." });
+        var options = this.options({ module: "templates", dest: ".", jade: {} });
         var angularModule = options.module;
         var destFile = options.dest;
 
@@ -26,7 +26,7 @@ module.exports = function (grunt) {
         }
 
         function renderTemplate(dir, file) {
-            jade.renderFile(file, function (error, html) {
+            jade.renderFile(file, options.jade, function (error, html) {
                 if (error) {
                     done(error);
                     return;

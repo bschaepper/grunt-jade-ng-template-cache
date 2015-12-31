@@ -25,7 +25,11 @@ grunt.loadNpmTasks('grunt-jade-ng-template-cache');
 grunt.initConfig({
 
     jadengtemplatecache: {
-        options: { module: "my-app", dest: "public/app/templates.js" },
+        options: {
+            module: "my-app",
+            dest: "public/app/templates.js",
+            jade: {}
+        },
         app: {
             files: [{
                 expand: true,
@@ -41,7 +45,8 @@ grunt.initConfig({
 ````
 
 `files` parameter follows [the grunt files format](http://gruntjs.com/configuring-tasks#files).
-`dest` will actually become the path prefix in [$templatecache](https://docs.angularjs.org/api/ng/service/$templateCache), this is the destination you fetch the files from a server from, when not using `templatecache`.
+`dest` will actually become the path prefix in [$templatecache](https://docs.angularjs.org/api/ng/service/$templateCache), this is the destination you fetch the files from a server from, when not using `$templateCache`.
+`jade` configure jade options if you have some globals or anything you'd like to override. This is passed to jade renderer, so it follows [jade options format](http://jade-lang.com/api/)
 
 Above configuration would result in something like this generated file `public/app/templates.js`:
 
