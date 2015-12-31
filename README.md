@@ -48,10 +48,10 @@ Above configuration would result in something like this generated file `public/a
 ````javascript
 (function () {
 "use strict";
-angular.module("my-app").run(function ($templateCache) {
+angular.module("my-app").run(["$templateCache", function ($templateCache) {
 [{"url":"/templates/home/template.html","template":"<div/>"}]
 .forEach(function (template) { $templateCache.put(template.url, template.template); });
-});
+}]);
 }());
 ````
 
