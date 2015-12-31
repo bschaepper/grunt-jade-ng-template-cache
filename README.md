@@ -18,7 +18,6 @@ grunt.loadNpmTasks('grunt-jade-ng-template-cache');
 
 *This plugin was designed to work with Grunt 0.4.x. If you're still using grunt v0.3.x it's strongly recommended that [you upgrade](http://gruntjs.com/upgrading-from-0.3-to-0.4), but in case you can't please use [v0.3.1](https://github.com/gruntjs/grunt-contrib-stylus/tree/grunt-0.3-stable).*
 
-
 ## Sample config
 
 ````javascript
@@ -44,9 +43,24 @@ grunt.initConfig({
 });
 ````
 
-`files` parameter follows [the grunt files format](http://gruntjs.com/configuring-tasks#files).
-`dest` will actually become the path prefix in [$templatecache](https://docs.angularjs.org/api/ng/service/$templateCache), this is the destination you fetch the files from a server from, when not using `$templateCache`.
+
+## Options
+
+### files
+
+`files` parameter follows [the grunt files format](http://gruntjs.com/configuring-tasks#files).  
+
+### options.module
+`module` will be used as your angular module name, `$templateCache` will be configured in a `run` section of the given module. It is assumed this module exists, you either have to create it beforehand using `angular.module("templates", [])` and specify it as a dependency to your app, or just reuse your main module name.
+
+### options.dest
+
+`dest` will actually become the path prefix in [$templatecache](https://docs.angularjs.org/api/ng/service/$templateCache), this is the destination you fetch the files from a server from, when not using `$templateCache`.  
+
+### options.jade
 `jade` configure jade options if you have some globals or anything you'd like to override. This is passed to jade renderer, so it follows [jade options format](http://jade-lang.com/api/)
+
+## Sample output
 
 Above configuration would result in something like this generated file `public/app/templates.js`:
 
